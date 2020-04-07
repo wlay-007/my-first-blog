@@ -1,39 +1,29 @@
-<html>
-    <head>
-        <title>WLAY BLOG</title>
-    </head>
-    <body  background="https://i.ytimg.com/vi/0lWGQNQTbx4/sddefault.jpg">
-    <center> 
-        <div>
-            <h1><strong><a href=""> С ДР, бро </a></strong></h1>
-    </div>
-    </center>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+    <style>
+      .outline {
+       border: 5px solid rgba(0, 0, 0, 0.651);
+       padding: 0 20px;
+      }
+      .outline {
+       background: #353535; /* Цвет фона */
+       color: white; /* Цвет текста */
+       padding: 10px; /* Поля вокруг текста */
+       margin-bottom: 7px; /* Отступ снизу */
+    </style>
+  </head>
+  <center><h1>Посты</h1></center>
+  <body style="background: #e5ffd6;">
+    {%for post in posts%}
     <center>
-        <div>
-            <h1><a href="">Для тебя, бро</a></h1>
-            <h2 style="color:#ffff00"> Счастья, радости, здоровья,<h2>
-             <h2 style="color:#ffff00"> Мира, нежности с любовью,</h2>
-             <h2 style="color:#ffff00"> Процветать и долго жить</h2>
-             <h2 style="color:#ffff00"> Я желаю от души!</h2>
-                
-            <h2 style="color:#ffff00">  Всех чудес, что есть на свете,</h2>
-            <h2 style="color:#ffff00">  Доброты, тепла и света,</h2>
-            <h2 style="color:#ffff00">  Волшебства и вдохновения!</h2>
-            <h2 style="color:#ffff00">  Поздравляю с днём рождения!</h2>
-                
-            </p>
-        </div>
+      <div class="outline">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>Опубликованно : {{ post.published_date }}</p>
+      </div>
     </center>
-
-    <center>  
-        <div>
-            <h2><a href="">Эта песня для тебя, братуха</a></h2>
-            <video> width="400" height="300" controls src="ban.mp4"</video>
-        </div>
-    </center>
-    <center>
-        <video autoplay width="640" height="480" controls src="/Users/zakhargorovenko/Desktop/code/web design/django/djandoboys/mysite/blog/templates/blog/ban.mp4"></video> 
-    </center>
-    </body>
+    {%endfor%}
+  </body>
 </html>
